@@ -1,0 +1,49 @@
+.readdark {
+    .top{
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    button{
+        width: 180px;
+        height: 40px;
+        background-color: rgb(72, 128, 255);
+        border-radius: 16px;
+        border: none;
+        cursor: pointer;
+        color: white;
+    }
+}
+.bottom-div{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+    }
+
+    .readlight {
+        .top{
+        display: flex;
+        justify-content: space-between;
+        color: black;
+        button{
+            width: 180px;
+            height: 40px;
+            background-color: rgb(72, 128, 255);
+            border-radius: 16px;
+            border: none;
+            cursor: pointer;
+            color: white;
+        }
+    }
+    .bottom-div{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+        }
+    
+        

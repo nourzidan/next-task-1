@@ -1,0 +1,78 @@
+.auth{
+    form{
+        /* width: max-content; */
+        background-color: white;
+        border-radius: 1.5rem;
+        padding: 24px 32px;
+        color: rgba(32, 34, 36, 0.8);
+        h1,p{
+            text-align: center;
+            color: black;
+        }
+        label , input{
+            display: block;
+            
+        }
+        input{
+            padding: 0 16px;
+            height: 38px;
+            width: 100%;
+            background-color: rgba(241,244,249);
+            border-radius: 10px;
+            border: none;
+            margin-top: 8px;
+        }
+        label{
+            margin-top: 2rem;
+        }
+        input[type="submit"]{
+            max-width: 300px;
+            height: 47px;
+            margin: 0 auto;
+            margin-top: 2rem;
+            background-color:rgb(72,128,255) ;
+            color: white;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .end-div{
+            text-align: center;
+        }
+        .sign-up-form{
+            max-width: 600px;
+            
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            
+            input{
+               
+                margin: 0;
+            }
+            label img{
+                height: 100px;
+            }
+            
+            label{
+                margin-top: 0;
+            }
+            .FirstName,.LastName,.UserName{
+                flex: 1;
+            }  
+            .email{
+                width: 100%;
+            }
+            .password,.confirmationpassword{
+                flex: 1;
+            }
+            .profileimage{
+                width: 100%;
+            }
+            .profileimage label{
+                width:max-content;
+            }
+        }
+
+    }
+}

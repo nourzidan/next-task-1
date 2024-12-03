@@ -1,0 +1,74 @@
+.update .formdark{
+    height: 300px;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     gap: 50px;
+     color: white;
+     
+     .left{
+         height: 100%;
+         width: 100%;
+         display: flex;
+         flex-direction: column;
+         gap: 20px;
+         input[type="text"]{
+             display: block;
+             margin-top: 10px;
+             width: 100%;
+             color: black;
+             
+         }
+     }
+     input[type="file"]{
+         display: none;
+     }
+     .right{
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         width: 50%;
+         height: 100%;
+         border: 5px dashed rgb(39,49,66);
+         border-radius: 10px;
+ 
+     }
+ }
+
+ /* === */
+ 
+ .update .formlight{
+    height: 300px;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     gap: 50px;
+     color: black;
+     
+     .left{
+         height: 100%;
+         width: 100%;
+         display: flex;
+         flex-direction: column;
+         gap: 20px;
+         input[type="text"]{
+             display: block;
+             margin-top: 10px;
+             width: 100%;
+             
+         }
+     }
+     input[type="file"]{
+         display: none;
+     }
+     .right{
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         width: 50%;
+         height: 100%;
+         border: 5px dashed rgb(39,49,66);
+         border-radius: 10px;
+ 
+     }
+ }

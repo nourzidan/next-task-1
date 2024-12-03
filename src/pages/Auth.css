@@ -1,0 +1,7 @@
+.auth{
+    background-image: url('/public/assets/auth-bg.png');
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

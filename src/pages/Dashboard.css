@@ -1,0 +1,29 @@
+.dashboard{
+    .outlet-divdark{
+        margin-left: 220px;
+        height: 100vh;
+        background-color: rgb(24, 31, 43);
+        /* background-color: aqua; */
+        
+        .outletdark{
+            padding: 30px;
+            background-color: rgb(24, 31, 43);
+            
+        }
+    }
+}
+
+.dashboard{
+    .outlet-divlight{
+        margin-left: 220px;
+        height: 100vh;
+        background-color: rgb(195, 195, 195);
+        /* background-color: aqua; */
+        
+        .outletlight{
+            padding: 30px;
+            background-color:  rgb(195, 195, 195);
+            
+        }
+    }
+}
