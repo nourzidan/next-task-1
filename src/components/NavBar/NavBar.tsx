@@ -1,7 +1,13 @@
 import { useContext, useState } from "react"
 import { Mood } from "../../pages/Dashboard"
 import './NavBar.css'
+// interface MoodContextType{
+//   mood:string;
+//   setmood:(value:string)=>void;
+//   searchQuery: string;
+// setSearchQuery: (value: string) => void;
 
+// }
 export default function NavBar() {
 
     // const userinfo=JSON.parse(localStorage.getItem('userdata'))
@@ -15,7 +21,11 @@ export default function NavBar() {
     const lasttname=userinfo.user.last_name
     const username=userinfo.user.user_name
     // const [mood,setmood]=useState('dark')
-    const{mood,setmood, searchQuery, setSearchQuery}=useContext(Mood)
+   const context=useContext(Mood)
+   if (!context) {
+    return <div>Error: Mood context is not available</div>;
+  }
+    const{mood,setmood, searchQuery, setSearchQuery}=context
     const [moon,setmoon]=useState(true)
     const [sun,setsun]=useState(false)
 

@@ -14,13 +14,16 @@ interface sidebar{
 
 
 export default function SideBar({logo1,logo2,links}:sidebar) {
-    const{mood}=useContext(Mood)
+    
+    const context=useContext(Mood)
+  
+    const{mood,}=context!
 
   const navigate=useNavigate() 
   const logout=()=>{
       axios.post('https://vica.website/api/logout',null,{
         headers:{
-          Authorization:`Bearer ${JSON.parse(localStorage.getItem('userdata')).token}`
+          Authorization:`Bearer ${JSON.parse(localStorage.getItem('userdata')!).token}`
         }
         
       })

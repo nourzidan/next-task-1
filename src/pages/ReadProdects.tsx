@@ -14,8 +14,9 @@ interface ProductItem {
     image_url: string 
   }
 export default function ReadProdects() {
-
-    const{mood, searchQuery}=useContext(Mood)
+  const context=useContext(Mood)
+  const{mood,searchQuery}=context!
+    // const{mood, searchQuery}=useContext(Mood)
   const location=useLocation()
   const navigate = useNavigate()
   const goToCreate=()=>{
@@ -26,7 +27,7 @@ export default function ReadProdects() {
   const fetchproducts=()=>{
     axios.get('https://vica.website/api/items',{
       headers:{
-        Authorization: `Bearer ${JSON.parse(localStorage.getItem('userdata')).token}`
+        Authorization: `Bearer ${JSON.parse(localStorage.getItem('userdata')!).token}`
       }
      })
      .then(res=>{

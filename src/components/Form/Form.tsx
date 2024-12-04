@@ -38,7 +38,7 @@ function Form({title,description,btn,inputs,end,link,linkTo,url}:forminputs) {
 }, [])
 const handelData=(name:string,value:string|File)=>{
   (inputs.length<2)?
-  setdata({...data,[name]:value}):
+  setdata({...data,[name]:value}) :
   keysdata.append(name,value)
 
   // console.log("Data being sent (FormData):");
@@ -54,20 +54,20 @@ const handleImageChange =(event:React.ChangeEvent<HTMLInputElement>)=>{
 }
 
 
-const send=(event)=>{
+const send=(event: React.FormEvent<HTMLFormElement>)=>{
   event.preventDefault();
   // console.log("Data being sent (FormData):");
   // for (let pair of data.entries()) {
   //   console.log(`${pair[0]}:`, pair[1]);
   // }
   let headers1={}
-  let body1
+  let body1:BodyInit|null=null
   if (inputs.length<2){
     headers1={"content-type" : "application/json"}
     body1=JSON.stringify(data)
   }else{
     
-    body1=data
+    body1=data as FormData
   }
 
   fetch(url,{
@@ -107,10 +107,27 @@ const send=(event)=>{
             return(
                 <div className={element.classn} key={index} >
                     
-                <label htmlFor={index}>{element.label}</label>
-                {(element.type=="file")? <label htmlFor={index}><img src={ selectedImage || "/public/assets/profile-avatar.png"} alt="" /></label>: null}
-                <input onChange={(event)=>{handelData(element.nameinapi,(element.type!="file")? event.target.value : event.target.files[0]),(element.type=="file")?handleImageChange(event):null}}
-                  id={index} type={element.type} placeholder={element.placeholder} style={{display:(element.type=="file")?"none":"block"}}/>
+                <label htmlFor={index.toString()}>{element.label}</label>
+                {(element.type=="file")? <label htmlFor={index.toString()}><img src={ selectedImage || "/public/assets/profile-avatar.png"} alt="" /></label>: null}
+                <input
+  onChange={(event) => {
+    if (element.type !== "file") {
+      
+      handelData(element.nameinapi, event.target.value);
+    } else {
+     
+      const file = event.target.files?.[0]; 
+      if (file) {
+        handelData(element.nameinapi, file); 
+        handleImageChange(event); 
+      }
+    }
+  }}
+  id={index.toString()} 
+  type={element.type} 
+  placeholder={element.placeholder} 
+  style={{ display: (element.type === "file") ? "none" : "block" }} 
+/>
                 </div>
             )
         })}

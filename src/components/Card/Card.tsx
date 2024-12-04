@@ -11,16 +11,25 @@ interface carditem{
     refreshproducts:()=>void
 
   }
-
+  interface MoodContextType {
+    mood: string;
+}
 export default function Card({img,name,price,id,refreshproducts}:carditem) {
-    const{mood}=useContext(Mood)
+    const{mood}=useContext(Mood) as MoodContextType
     const navigate = useNavigate()
     const edit=(id:string)=>{
   navigate(`product/${id}`)
     }
     const dell=(id:string)=>{
+      const userData = localStorage.getItem('userdata');
+        if (!userData) {
+            console.error("No user data found in localStorage");
+            return;
+        }
+        const token = JSON.parse(userData).token;
       axios.delete(`https://vica.website/api/items/${id}`,{
-        headers:{Authorization:`Bearer ${JSON.parse(localStorage.getItem('userdata')).token}`}}
+        
+        headers:{Authorization:`Bearer ${token}`}}
       )
       .then(res=>{console.log(res)
     refreshproducts()})

@@ -28,7 +28,7 @@ const sidelinks :sidebaritem[]=[
     setSearchQuery: (value: string) => void;
 
     }
-    export const Mood=createContext<MoodContextType|undefined|string>("")
+    export const Mood=createContext<MoodContextType|null>(null)
 export default function Dashboard() {
     const[mood,setmood]=useState('dark')
     const [searchQuery, setSearchQuery] = useState("")
