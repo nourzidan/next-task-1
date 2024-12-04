@@ -108,7 +108,7 @@ const send=(event: React.FormEvent<HTMLFormElement>)=>{
                 <div className={element.classn} key={index} >
                     
                 <label htmlFor={index.toString()}>{element.label}</label>
-                {(element.type=="file")? <label htmlFor={index.toString()}><img src={ selectedImage || "/public/assets/profile-avatar.png"} alt="" /></label>: null}
+                {(element.type=="file")? <label htmlFor={index.toString()}><img src={ selectedImage || "/assets/profile-avatar.png"} alt="" /></label>: null}
                 <input
   onChange={(event) => {
     if (element.type !== "file") {
