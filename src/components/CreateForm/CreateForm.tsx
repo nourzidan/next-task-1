@@ -82,7 +82,7 @@ export default function CreateForm() {
           <label htmlFor="image">
             <img
               style={{ maxWidth: "150px" }}
-              src={newImage || "/public/assets/icons/upload.svg"}
+              src={newImage || "/assets/icons/upload.svg"}
               alt=""
             />
           </label>
